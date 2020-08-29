@@ -14,6 +14,7 @@
 		<header>
 			<nav class="navbar navbar-light bg-light">
   				<span class="navbar-brand mb-0 h1" style="font-weight: bold;">MyDevBlog</span>
+  				<a href="/newArtigo" class="btn btn-primary" role="button">Novo Artigo</a>
 			</nav>
 		</header>
 	
@@ -22,7 +23,7 @@
 				
 				<nav arial-label="breadcrumb">
 					<ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-						<li class="breadcrumb-item active" aria-current="page" >Artigos</li>
+						<li class="breadcrumb-item active" aria-current="page">Artigos</li>
 					</ol>
 				</nav>
 				
@@ -33,7 +34,7 @@
 							<span th:text="${artigo.data}"></span>
 						</p>
 						
-						<a href="#"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;"><span th:text="${artigo.titulo}"></span></h4></a>
+						<a th:href="${(#mvc.url('AC#getArtigoDetails').arg(0, artigo.id)).build()}"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;"><span th:text="${artigo.titulo}"></span></h4></a>
 						
 						<p class="card-text"><span th:utext="${#strings.abbreviate(artigo.texto, 400)}"></span></p>
 						
